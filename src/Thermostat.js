@@ -1,5 +1,6 @@
 function Thermostat(){
   this._temperature = 20;
+  this._pModeIsOn = true;
 };
 
 //we could just write this.temperatue and our test would pass as well
@@ -10,6 +11,19 @@ Thermostat.prototype.temperature = function(){
   return this._temperature;
 };
 
-Thermostat.prototype.up = function(number) {
-  return this._temperature += number
+Thermostat.prototype.pModeIsOn = function() {
+  return true
 };
+
+Thermostat.prototype.up = function() {
+  this._temperature ++;
+};
+
+Thermostat.prototype.down = function() {
+  if (this.temperature() > 10) {
+    this._temperature --;
+  };
+};
+
+// the user is trying to lower it BY a specific number,
+// not setting it to what they want the temp to be
