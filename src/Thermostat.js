@@ -12,11 +12,29 @@ Thermostat.prototype.temperature = function(){
 };
 
 Thermostat.prototype.pModeIsOn = function() {
-  return true
+  return this._pModeIsOn
 };
 
+Thermostat.prototype.turnOnPMode = function() {
+  this._pModeIsOn = true;
+};
+
+Thermostat.prototype.turnOffPMode = function() {
+  this._pModeIsOn = false;
+};
+
+Thermostat.prototype.maxTemp = function(){
+  if (this._pModeIsOn == true){
+    return 25;
+  } else {
+    return 32;
+  }
+}
+
 Thermostat.prototype.up = function() {
-  this._temperature ++;
+  if (this.temperature() < this.maxTemp()) {
+    this._temperature ++;
+  };
 };
 
 Thermostat.prototype.down = function() {
@@ -25,5 +43,16 @@ Thermostat.prototype.down = function() {
   };
 };
 
-// the user is trying to lower it BY a specific number,
-// not setting it to what they want the temp to be
+Thermostat.prototype.resetButton = function() {
+  this._temperature = 20;
+};
+
+Thermostat.prototype.currentEnergyUsage = function() {
+  if (this._temperature < 18){
+    return "low-usage";
+  } else if (this._temperature < 25) {
+    return "medium-usage";
+  } else {
+    return "high-usage";
+  }
+};
