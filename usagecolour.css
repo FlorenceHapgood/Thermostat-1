@@ -1,3 +1,9 @@
+body {
+  background-image: url("sparkly.jpg");
+  /* background-color: #cccccc; */
+}
+
+
 .low-usage {
   color: green;
 }
