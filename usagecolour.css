@@ -53,3 +53,7 @@ select {
   margin: 4px 2px;
   cursor: pointer;
 }
+
+#temperature {
+  font-size: 60px;
+}
