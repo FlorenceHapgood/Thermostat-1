@@ -2,6 +2,18 @@ $(document).ready(function() {
 var thermostat = new Thermostat();
 updateTemperature();
 
+var city = $('#current-city').val();
+$.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=7d7d33a65c53f4cff779a0fb09c273aa&units=metric', function(data) {
+$('#outside-temperature').text(data.main.temp)
+})
+
+$('#current-city').change(function() {
+  var city = $('#current-city').val();
+$.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=7d7d33a65c53f4cff779a0fb09c273aa&units=metric', function(data) {
+  $('#outside-temperature').text(data.main.temp)
+  })
+})
+
 $('#temperature-up').click(function() {
   thermostat.up();
   updateTemperature();
@@ -28,3 +40,6 @@ function updateTemperature() {
   $("#temperature").attr('class', thermostat.currentEnergyUsage());
 }
 })
+
+
+// 7d7d33a65c53f4cff779a0fb09c273aa
