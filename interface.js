@@ -47,7 +47,7 @@ $('#powersaving-off').on('click', function() {
 })
 
 function updateTemperature() {
-  $('#temperature').text(thermostat._temperature);
+  $('#temperature').text(thermostat._temperature + " degrees Celsius");
   $("#temperature").attr('class', thermostat.currentEnergyUsage());
 }
 })

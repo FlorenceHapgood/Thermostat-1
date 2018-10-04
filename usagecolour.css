@@ -1,6 +1,8 @@
 body {
   background-image: url("sparkly.jpg");
-  /* background-color: #cccccc; */
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  font-size: 30px;
 }
 
 
@@ -14,4 +16,40 @@ body {
 
 .high-usage {
   color: red;
+}
+
+section {
+  outline-style: solid;
+  max-width: 50%;
+  margin: auto;
+}
+
+button {
+  background-color: #ffffff;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.up-down {
+  border-radius: 50%;
+}
+
+select {
+  background-color: #ffffff;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
